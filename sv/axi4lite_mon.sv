@@ -88,9 +88,9 @@ class uvm_axi4lite_mon extends uvm_monitor;
 //	 txn.cycles--;
 	 if (valid_txn == 'b1 ) begin
 	   `uvm_info("MON", txn.convert2string(), UVM_LOW)
- 	   valid_txn = 0;
 	   item_collected_port.write(txn);
 	 end
+	 valid_txn = 0;
       end
    endtask // collect_transactions
    
